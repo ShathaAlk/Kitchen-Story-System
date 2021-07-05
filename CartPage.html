@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CSS/style.css" rel="stylesheet">
+
+  <title>The Cart</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <style>
+    body {
+      background-image: url("./images/bg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center top;
+
+    }
+
+    .container {
+      /* background-color:  rgba(167, 78, 36, 0.5); */
+      background-color: rgba(255, 255, 255, 0.9);
+
+    }
+
+    .img-style {
+      width: 1em;
+    }
+
+    .decrease,
+    .increase,
+    .remove {
+      background: none;
+      border: none;
+    }
+
+    h6,h5 {
+      font-weight: 600;
+      color: rgba(235, 114, 57, 0.5);
+      border-bottom: .25rem solid transparent;
+    }
+
+    label {
+      color: rgba(235, 114, 57, 0.5);
+      border-bottom: .25rem solid transparent;
+      font-size: 1em;
+    }
+
+    .btn-primary {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  background-color:  rgba(167, 78, 36, 0.74);
+  border-color: rgba(255, 255, 255, 0.74);
+  width: 8em !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  color: rgba(255, 255, 255);
+  border-color: rgba(255, 255, 255);
+  background-color: #6c757d;
+  box-shadow:0 0 0 2px rgba(255, 255, 255, 0);
+}
+
+.form-check-input:checked{
+/* font-size: 0.9em;
+font-weight: normal; */
+background-color:  rgba(0, 0, 0, 0.74);
+border-color:  rgba(0, 0, 0, 0.74);
+
+}
+
+  </style>
+
+</head>
+
+<body>
+  <header class="mb-auto">
+  <div>
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+      <a class="nav-link" aria-current="page" href="./HomePage.html">Home</a>
+      <a class="nav-link" href="./loginPage.html">login</a>
+    </nav>
+  </div>
+  <div class="cartNums">
+    <a href="./CartPage.html" style="text-decoration: none;"><img style="width: 40px;" src="./images/cart-100.png" alt=""><span> 0 </span></a>
+  </div>
+</header>
+
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h1 class="fw-light">Shopping Cart</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7 col-lg-6">
+          <div class="rowClass row mb-5 text-center">
+            <div class="col-1 themed-grid-col text-muted"></div>
+             <div class="col-4 themed-grid-col text-muted"><h6>Item Name</h6></div>
+             <div class="col-2 themed-grid-col text-muted"><h6>Price</h6></div>
+             <div class="col-3 themed-grid-col text-muted"><h6>Quantity</h6></div>
+             <div class="col-2 themed-grid-col text-muted"><h6>Total</h6></div>
+           </div>
+
+            <div class="Customeritems">
+           
+            </div>
+        </div>
+        <div class="col-md-5 col-lg-5 m-auto">
+          <h5 class="mb-3">Billing address</h5>
+          <form class="needs-validation" action="javascript:void(0);" novalidate >
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <div class="input-group has-validation">
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+            </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h5 class="mb-3">Payment</h5>
+
+            <div class="my-3">
+              <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="credit">Credit card</label>
+              </div>
+              <div class="form-check">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="debit">Debit card</label>
+              </div>
+              <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="paypal">PayPal</label>
+              </div>
+            </div>
+
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Credit card number</label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="btn btn-lg btn-primary" type="submit" onclick="payment()">Pay</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021 Kitchen Story</p>
+
+  </footer>
+
+   <script src="./JavaScript/Customers.js"></script>
+
+</body>
+
+</html>
